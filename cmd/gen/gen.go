@@ -13,6 +13,7 @@ import (
 // Generator generates the static website.
 type Generator struct {
 	Assets     fs.FS
+	ReadFile   func(name string) ([]byte, error)
 	CreateFile func(name string) (*os.File, error)
 	MkdirAll   func(path string, perm os.FileMode) error
 }
@@ -31,18 +32,24 @@ func (g Generator) Run(outDir string) error {
 	}
 
 	for _, blogEntry := range blogEntries {
+		contents, err := g.ReadFile(blogEntry.ContentPath)
+		if err != nil {
+			return fmt.Errorf("read file %s: %v", blogEntry.ContentPath, err)
+		}
+
 		outputs = append(outputs, struct {
 			Path         string
 			TemplateName string
 			Data         any
 		}{
 			Path:         fmt.Sprintf("/blog/%s", blogEntry.Slug),
-			TemplateName: blogEntry.TemplatePath,
+			TemplateName: "pages/blog.tmpl",
 			Data: func() any {
 				d := newTemplateData()
 				d["Page"] = map[string]any{
 					"Title":         blogEntry.Title,
 					"PublishedDate": blogEntry.PublishedDate,
+					"Content":       string(contents),
 				}
 				return d
 			}(),

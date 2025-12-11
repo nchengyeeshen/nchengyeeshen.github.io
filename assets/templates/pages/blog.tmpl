@@ -1,0 +1,7 @@
+{{ define "page:title" }}{{ .Page.Title }}{{ end }}
+
+{{ define "page:main" }}
+<h1>{{ .Page.Title }}</h1>
+<subtitle>{{ .Page.PublishedDate }}</subtitle>
+{{ htmlnify .Page.Content }}
+{{ end }}

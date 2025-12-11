@@ -13,6 +13,7 @@ func main() {
 
 	g := Generator{
 		Assets:     os.DirFS("assets"),
+		ReadFile:   os.ReadFile,
 		CreateFile: os.Create,
 		MkdirAll:   os.MkdirAll,
 	}

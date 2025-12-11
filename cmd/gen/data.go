@@ -14,7 +14,7 @@ var blogEntries = []BlogEntries{
 	{
 		Title:         "On Leading a Team",
 		Slug:          "on-leading-a-team",
-		TemplatePath:  "pages/blog/on-leading-a-team.tmpl",
+		ContentPath:   "posts/on-leading-a-team.md",
 		PublishedDate: "2025-12-11",
 	},
 }
@@ -27,6 +27,6 @@ type NavLink struct {
 type BlogEntries struct {
 	Title         string
 	Slug          string
-	TemplatePath  string
+	ContentPath   string
 	PublishedDate string
 }
