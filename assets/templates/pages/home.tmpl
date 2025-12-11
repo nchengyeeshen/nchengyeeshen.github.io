@@ -1,0 +1,21 @@
+{{ define "page:title" }}Home{{ end }}
+
+{{ define "page:main" }}
+<h1>Nicholas Cheng's blog</h1>
+
+<p>
+  Hi! Welcome to my little blog where I type out some of my thoughts. I'm a
+  software engineer based in Kuala Lumpur, Malaysia.
+</p>
+
+<p>Here is a list of some of my posts</p>
+
+<ul>
+  {{ range $post := .Posts }}
+  <li>
+    <a href="/blog/{{ $post.Slug }}"><i>{{ $post.PublishedDate }}</i> — {{ $post.Title }}</a>
+  </li>
+  {{ end }}
+</ul>
+
+{{ end }}

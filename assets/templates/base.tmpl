@@ -1,0 +1,21 @@
+{{ define "base" }}
+<!doctype html>
+<html lang='en' class='-no-dark-theme'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>{{ template "page:title" . }} | {{ .SiteTitle }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ block "page:meta" . }}{{ end }}
+    <link rel="stylesheet" href="https://unpkg.com/missing.css@1.1.2">
+</head>
+
+<body>
+    {{ template "partial:header" . }}
+    <main>
+        {{ template "page:main" . }}
+    </main>
+</body>
+
+</html>
+{{ end }}
