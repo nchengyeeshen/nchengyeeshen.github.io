@@ -11,11 +11,22 @@ import (
 )
 
 // Generator generates the static website.
+//
+// See [NewGenerator].
 type Generator struct {
 	Assets     fs.FS
 	ReadFile   func(name string) ([]byte, error)
 	CreateFile func(name string) (*os.File, error)
 	MkdirAll   func(path string, perm os.FileMode) error
+}
+
+func NewGenerator(assetsPath string) *Generator {
+	return &Generator{
+		Assets:     os.DirFS(assetsPath),
+		ReadFile:   os.ReadFile,
+		CreateFile: os.Create,
+		MkdirAll:   os.MkdirAll,
+	}
 }
 
 func (g Generator) Run(outDir string) error {

@@ -11,12 +11,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	g := Generator{
-		Assets:     os.DirFS("assets"),
-		ReadFile:   os.ReadFile,
-		CreateFile: os.Create,
-		MkdirAll:   os.MkdirAll,
-	}
+	g := NewGenerator("assets")
 	if err := g.Run(os.Args[1]); err != nil {
 		fmt.Printf("generate: %v\n", err)
 		os.Exit(1)
