@@ -34,7 +34,8 @@ contributor, but I am no longer opposed to being a people manager.
 6. It is very important that the team celebrates victories often. We shipped a
    feature on time? We're gonna get some snacks to celebrate!
 7. A good whiteboard and a set of nice whiteboard markers is one of the best
-   investments you can make for a team. I bought a set of [Pilot V Board
+   investments you can make for a team (hot take: even better than a Claude Pro
+   subscription). I bought a set of [Pilot V Board
    Master](https://pilotpen.com.my/product/v-board-master/) markers and brought
    it with me around the office. You'll see that set of markers in every
    discussion we have now.
