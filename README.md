@@ -1,4 +1,6 @@
-# Astro Starter Kit: Blog
+# Oh hello! What are you doing here? The website is [here](https://nchengyeeshen.github.io). Now come on, hop along.
+
+---
 
 ```sh
 npm create astro@latest -- --template blog
