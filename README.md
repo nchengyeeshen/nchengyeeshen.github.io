@@ -1,4 +1,4 @@
-# Oh hello! What are you doing here? The website is [here](https://nchengyeeshen.github.io). Now come on, hop along.
+# Oh hello! What are you doing here? The website is [here](https://ncheng.dev). Now come on, hop along.
 
 ## Credit
 
